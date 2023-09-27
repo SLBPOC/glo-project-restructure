@@ -6,7 +6,7 @@
   <img _ngcontent-qeb-c370="" matbuttonicon="" alt="avatar" class="" src="./assets/images/Delfi_White.svg">
   <img _ngcontent-qeb-c370="" matbuttonicon="" alt="avatar" class="" src="./assets/images/divider.svg">
   <mat-form-field>
-    <mat-select value="Domain" placeholder="Sucker Rod Pump">
+    <mat-select value="exact" placeholder="Gas Lift">
       <mat-option value="domain">Sucker Rod Pump</mat-option>
       <mat-option value="exact">Gas Lift</mat-option>
     </mat-select>
@@ -132,9 +132,13 @@
   <mat-sidenav #sidenav mode="side" class="example-sidenav open" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
     id="navopen">
     <mat-nav-list>
-      <mat-list-item class="navcontenttxt" routerLinkActive="active-list-item" routerLink="/dashboard">
-        <span class="full-width menutxt" *ngIf="isExpanded || isShowing"> Dashboard</span>
+      <mat-list-item class="navcontenttxt">
+        <span class="full-width menutxt"> Dashboard</span>
       </mat-list-item>
+      <!-- Commented for GLO -->
+      <!-- <mat-list-item class="navcontenttxt" routerLinkActive="active-list-item" routerLink="/dashboard">
+        <span class="full-width menutxt" *ngIf="isExpanded || isShowing"> Dashboard</span>
+      </mat-list-item> -->
       <mat-list-item (click)="showSubmenu = !showSubmenu" routerLinkActive="active-list-item"
         class="parent navcontenttxt" routerLink='/wells'>
         <span class="full-width menutxt" *ngIf="isExpanded || isShowing">Well List</span>

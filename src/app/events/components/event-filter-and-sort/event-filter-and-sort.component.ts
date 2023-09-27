@@ -59,7 +59,7 @@ export class EventFilterAndSortComponent {
   ) { }
 
   ngOnInit(): void {
-    this.getEventDetails();
+    // this.getEventDetails();    // Check with Dev
 
     this.isEvent;
 
