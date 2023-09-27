@@ -1,0 +1,9 @@
+<div class="card-text">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    [oneToOne]="true"
+    (chartInstance)="logChartInstance($event)"
+    style="width: 100%; min-height: 20px; display: block"
+  ></highcharts-chart>
+</div>
