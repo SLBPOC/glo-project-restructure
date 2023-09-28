@@ -9,12 +9,10 @@ import { AlertListService } from 'src/app/shared/services/alert-list.service';
   styleUrls: ['./alert-categories-table.component.scss']
 })
 export class AlertCategoriesTableComponent implements OnInit, OnChanges {
-
   displayedColumns = ['wellname', 'alertCount', 'snoozAlertCount', 'priority'];
   dataSource: any = [];
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options[] = [];
-  // chartOptionsArr: Highcharts.Options[] = [];
 
   loading = true;
   pageSize: number = 5;
@@ -64,64 +62,9 @@ export class AlertCategoriesTableComponent implements OnInit, OnChanges {
         color: '#28A228'
       }
       chartSeriesArr.push(high,medium,low);
-      // this.chartOptions.series[i].data
       this.prepateChart([high, medium, low])
 
     }
-    // this.chartOptions.series[0].data
-    // this.chartOptions = {
-    //   chart: {
-    //     type: 'pie',
-    //     renderTo: 'container',
-    //     margin: 0,
-    //     spacing: [0,0,0,0],
-    //     backgroundColor: undefined
-    //   },
-    //   exporting: { enabled: false },
-    //   legend : {enabled: false},
-      
-    //   yAxis: {
-    //     labels: {
-    //       enabled: false
-    //     },
-    //     tickAmount: 6,
-    //     gridLineWidth: 1,
-    //     visible: false
-    //   },
-    //   xAxis: {
-    //     labels: {
-    //       enabled: false
-    //     },
-    //     tickAmount: 6,
-    //     gridLineWidth: 1,
-    //     visible: false
-    //   },
-    //   title: {
-    //     text: ''
-    //   },
-    //  plotOptions: {
-    //       bar: {
-    //           dataLabels: {
-    //               enabled: true,
-    //               inside: true,
-    //               align: 'left',
-    //               x: -40
-    //           },
-    //       },
-    //       series: {
-           
-    //     }
-  
-    //   },
-      
-    //   series: [ 
-    //     {
-    //       type: 'bar',
-    //       // data: chartSeriesArr
-    //       data: []
-    //     }
-    //   ]
-    // };
   }
 
   prepateChart(x: any) {
@@ -174,13 +117,11 @@ export class AlertCategoriesTableComponent implements OnInit, OnChanges {
       series: [ 
         {
           type: 'bar',
-          // data: chartSeriesArr
           data: x
         }
       ]
     } as any;
     this.chartOptions.push(chartOptions)
-    // console.log('==> chartOptionArr', this.chartOptionsArr);
 
   }
 
@@ -196,89 +137,3 @@ export class AlertCategoriesTableComponent implements OnInit, OnChanges {
   }
 
 }
-export interface PeriodicElement {
-  wellname: string;
-  noofalerts: number;
-  snoozedalerts: number;
-
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-
-    wellname: 'well-001',
-    noofalerts: 100,
-    snoozedalerts: 35,
-
-  },
-  {
-
-    wellname: 'well-002',
-    noofalerts: 90,
-    snoozedalerts: 20,
-
-  },
-  {
-
-    wellname: 'well-003',
-    noofalerts: 80,
-    snoozedalerts: 20,
-
-
-  },
-  {
-
-    wellname: 'well-004',
-    noofalerts: 70,
-    snoozedalerts: 30,
-
-  },
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-
-  },
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-
-  },
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-
-  },
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-
-  },
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-
-  },
-
-  {
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40,
-  },
-
-  {
-
-    wellname: 'well-005',
-    noofalerts: 60,
-    snoozedalerts: 40
-  },
-]
