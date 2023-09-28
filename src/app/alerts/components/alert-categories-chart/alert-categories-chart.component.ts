@@ -47,7 +47,7 @@ export class AlertCategoriesChartComponent implements OnInit, OnChanges {
             enabled: false
           },
 
-          showInLegend: true,
+          showInLegend: false,
         },
       },
       legend: {
