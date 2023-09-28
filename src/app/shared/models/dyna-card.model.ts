@@ -25,16 +25,29 @@ export class DynacardModel2 {
     confidence!: string
 }
 
-export class CardDetailsModel {
-    id!: string;
-    pumpFillage_per!: number;
-    SPM!: number;
-    minPolishedRodLoad_lbs!: number;
-    peakPolishedRodLoad_lbs!: number;
-    surfaceStrokeLength_in!: number;
-    downholeStrokeLength_in!: number;
-    totalFluid_in!: number
-  frame: any;
+export interface CardDetailsModel extends FramesDynameter {	
+    id: string;	
+    pumpFillage_per: number;	
+    SPM: number;	
+    minPolishedRodLoad_lbs: number;	
+    peakPolishedRodLoad_lbs: number;	
+    surfaceStrokeLength_in: number;	
+    downholeStrokeLength_in: number;	
+    totalFluid_in: number;	
+    notes: string;	
+    cardName:string;	
+}	
+export interface DynaCardDetailsModel extends FramesDynameter {	
+    id: string;	
+    pumpFillage: number;	
+    spm: number;	
+    minPublishedRodLoad: number;	
+    pickPublishedRodLoad: number;	
+    surfaceStrokeLength: number;	
+    downloadStroke: number;	
+    totalFluid: number;	
+    notes: string;	
+    cardName:string;	
 }
 
 export interface Classification {
@@ -45,16 +58,16 @@ export interface Classification {
 export interface DateRangeBubbleChart {
     from: string;
     to: string;
-    classfications: Classification[];
+    classifications: Classification[];
 }
 
 export interface BubbleChartInfo {
     cards: DateRangeBubbleChart[];
-    classfication: Classification[];
+    classification: Classification[];
 }
 
 export interface FramesDynameter {
-    classfication: string,
+    classification: string,
     frame: Date
 }
 

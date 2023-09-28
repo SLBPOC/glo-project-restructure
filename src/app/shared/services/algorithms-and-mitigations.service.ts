@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import {filter, tap} from 'rxjs/operators'
-import { BubbleChartInfo, ClassficationInfo } from '../models/dyna-card.model';
+import { BubbleChartInfo, ClassficationInfo, DateRangeBubbleChart } from '../models/dyna-card.model';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { BubbleChartInfo, ClassficationInfo } from '../models/dyna-card.model';
 
 export class AlgorithmsAndMitigationsService {
 
-  private apiUrl: string="http://localhost:5000/api/";
+  private apiUrl: string=environment.srp_microservice_url;
   httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -108,8 +109,8 @@ export class AlgorithmsAndMitigationsService {
     return this.http.get(this.bubbleChartDataJson);
   }
 
-  getBubbleChartDataV2(start:any,end:any):Observable<BubbleChartInfo>{
-    var url = this.apiUrl + `dynameter/classifications/from/${start.toISOString()}/to/${end.toISOString()}/chart`
+  getBubbleChartDataV2(start:Date | null,end:Date | null):Observable<BubbleChartInfo>{
+    var url = this.apiUrl + `dynameter/classifications/from/${start?.toISOString()}/to/${end?.toISOString()}/chart`
     return this.http.get<BubbleChartInfo>(url);
   }
 
@@ -123,7 +124,7 @@ export class AlgorithmsAndMitigationsService {
 
   getWellInfoById(wellId: string): Observable<any> {
     // return this.http.get<any>(this.apiUrl + `Well/GetWellInfoById/${wellId}`, this.httpOptions); 
-    return this.http.get<any>  (`http://localhost:5000/api/Well/GetWellInfoById?WellId=${wellId}`)       
+    return this.http.get<any> (`${this.apiUrl}WellInfo/Get?WellId=${wellId}`)
   }
 
   getHeatMapChartData() {
