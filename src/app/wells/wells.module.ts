@@ -38,6 +38,8 @@ import { WellFilterAndSortComponent } from './components/well-filter-and-sort/we
 // import { SurfaceCardPumpFillComponent } from './components/surface-card-pump-fill/surface-card-pump-fill.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { EventFilterAndSortComponent } from './components/event-filter-and-sort/event-filter-and-sort.component';
+import { WellCycleStatusChartComponent } from './components/well-cycle-status-chart/well-cycle-status-chart.component';
+import { WellModeOfOperationChartComponent } from './components/well-mode-of-operation-chart/well-mode-of-operation-chart.component';
 // import { ListOfTimeComponent } from './components/list-of-time/list-of-time.component';
 // import { UiDynacardInfoComponent } from './components/well-details-dynacard/ui-dynacard-info/ui-dynacard-info.component';
 
@@ -90,6 +92,8 @@ import { EventFilterAndSortComponent } from './components/event-filter-and-sort/
     // SurfaceCardPumpComponent,
     // SurfaceCardPumpFillComponent,
     EventFilterAndSortComponent,
+    WellCycleStatusChartComponent,
+    WellModeOfOperationChartComponent,
     // ListOfTimeComponent,
     // UiDynacardInfoComponent
   ],
